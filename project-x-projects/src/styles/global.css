@@ -1,0 +1,392 @@
+:root{
+  --brand: #11878D;      /* Blue Chill */
+  --bg1: #E7F3F3;
+  --bg2:#CFE7E8;         /* blue background */
+  --ink: #0f172a;        /* dark text */
+  --muted: #64748b;
+  --line: #e6eef0;
+  --buttonLine: #a8cfd1;
+
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --navH: 64px;
+  --radius: 12px;
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg1);
+  color: var(--ink);
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  font-family: var(--font-heading);
+  color: var(--ink);
+  
+}
+
+a{ color: inherit; text-decoration: none; }
+
+.container{
+  width: min(1700px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* NAV */
+.navWrap{
+  height: var(--navH);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+}
+.navRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand{
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+}
+.brandMark{
+  width: 300px;
+  height: auto;
+  
+  font-weight: 800;
+}
+
+.navLinks{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #0b2b2e;
+  font-size: 14px;
+}
+.navLinks a{
+  padding: 8px 10px;
+  border-radius: 0;
+}
+.navLinks a:hover{
+  background: rgba(17,135,141,0.08);
+}
+
+.navActions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn{
+  border: 2px solid var(--buttonLine);
+  background: var(--bg2);
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover{ box-shadow: var(--shadow); }
+
+.btnPrimary{
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--bg1);
+}
+.btnPrimary:hover{ filter: brightness(0.98); }
+
+.btnGhost{
+  background: var(--bg2);
+  border-color: rgba(17,135,141,0.15);
+  color: #08393c;
+}
+
+
+
+/* HERO (matches screenshot layout) */
+.heroSection{
+  padding: 44px 0 56px;
+  background: var(--bg1);
+}
+
+.heroCard{
+  border: 1.5px solid var(--buttonLine);
+  border-radius: 0;
+  overflow: hidden;
+
+  /* make it a perfect square */
+  width: 100%;
+  max-width: 1700px;           
+  aspect-ratio: 1 / 0.46;         /* <-- forces square */
+  margin: 0 auto;
+
+  /* equal columns */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* <-- equal width */
+
+  background: var(--bg2);
+  margin-bottom: 50px;
+}
+
+.heroLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 🔑 vertical centering */
+  
+  padding: clamp(24px, 4vw, 56px);
+  background: var(--bg2);
+}
+
+.heroActions{
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.heroRight{
+  width: 100%;
+  height: 100%;
+}
+
+.heroRight img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* or "contain" if you never want cropping */
+  display: block;
+}
+
+
+.kicker{
+  color: #0b2b2e;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 20px;
+
+  font-size: clamp(11px, 1.5vw, 20px);
+
+}
+.h1{
+  margin: 0 0 16px;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  
+  font-size: clamp(32px, 3.6vw, 60px);
+}
+.lead{
+  margin: 0 0 22px;
+  color: #123b3e;
+  max-width: 52ch;
+  line-height: 1.6;
+  font-size: clamp(12px, 1.50vw, 22px);
+}
+
+
+/* simple page spacing */
+.pagePad{ padding: 28px 0 60px; }
+.pageTitle{ font-size: 28px; margin: 10px 0 6px; }
+.pageSub{ color: var(--muted); margin: 0 0 18px; line-height: 1.6; }
+
+.card{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fff;
+}
+
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px){
+  .heroCard{ grid-template-columns: 1fr; }
+  .heroLeft{ padding: 34px 22px; }
+  .h1{ font-size: 36px; }
+  .grid2{ grid-template-columns: 1fr; }
+}
+
+.xproj{
+  color: #11878D;
+  font-weight: 900;
+}
+
+
+/* IMPACT SECTION */
+.impactSection{
+  padding: 70px 0 90px;
+  background: var(--bg2);
+  margin-left: -200px;
+  margin-right: -200px;
+}
+
+.impactHeader{
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.impactEyebrow{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0b2b2e;
+  margin-bottom: 10px;
+}
+
+.impactTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 4.4vw, 76px);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.impactSub{
+  margin: 0 auto;
+  max-width: 56ch;
+  color: #123b3e;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+}
+
+/* 3 columns */
+.impactGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.impactCol{
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* cards */
+.impactCard{
+  border: 1.5px solid var(--buttonLine);
+  background: rgba(255,255,255,0.20);
+  padding: 26px;
+}
+
+.impactCardTall{
+  padding-bottom: 18px;
+}
+
+/* little label in top-left like screenshot */
+.impactTag{
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0b2b2e;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* icon style */
+.impactIcon{
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  color: #0b2b2e;
+  font-weight: 900;
+}
+
+.iconImg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.impactCardTitle{
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.impactCardBody{
+  margin: 0 0 14px;
+  color: #123b3e;
+  line-height: 1.6;
+  font-size: 14px;
+  max-width: 46ch;
+}
+
+.impactLink{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0b2b2e;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.impactLink:hover{
+  color: var(--brand);
+}
+
+/* media placeholder block — FULL BLEED */
+.impactMedia{
+  margin-top: 18px;
+
+  /* cancel card padding so image goes edge-to-edge */
+  margin-left: -26px;
+  margin-right: -26px;
+  margin-bottom: -18px;
+
+  
+  background: rgba(15, 23, 42, 0.08);
+  aspect-ratio: 16 / 10;
+
+  display: grid;
+  place-items: center;
+}
+
+/* inner placeholder (still centered) */
+.impactMediaInner{
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.18);
+  display: grid;
+  place-items: center;
+  color: rgba(15, 23, 42, 0.55);
+  font-weight: 600;
+  overflow: hidden;  
+}
+
+/* the standalone image-only block in the middle column */
+.impactCardImageOnly{
+  padding: 0;
+  background: transparent;
+}
+.impactMediaOnly{
+  
+  width: 100%;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .impactGrid{
+    grid-template-columns: 1fr;
+  }
+}
