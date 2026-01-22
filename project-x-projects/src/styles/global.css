@@ -1,8 +1,10 @@
 :root{
   --brand: #11878D;      /* Blue Chill */
-  --bg1: #E7F3F3;
-  --bg2:#CFE7E8;         /* blue background */
+  --bg1: #E7F3F3;    /* lighter bg */
+  --bg2:#CFE7E8;     /* light bg */
+  --bg3: #010707;    /* dark bg */
   --ink: #0f172a;        /* dark text */
+  --inverseInk: #f1f5f9; /* light text */
   --muted: #64748b;
   --line: #e6eef0;
   --buttonLine: #a8cfd1;
@@ -16,7 +18,8 @@
 }
 
 *{ box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { width: 100%; overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
 body{
   margin: 0;
   font-family: var(--font-body);
@@ -136,6 +139,8 @@ a{ color: inherit; text-decoration: none; }
 
   background: var(--bg2);
   margin-bottom: 50px;
+
+  min-height: 520px; /* helps desktop */
 }
 
 .heroLeft{
@@ -165,6 +170,32 @@ a{ color: inherit; text-decoration: none; }
   display: block;
 }
 
+@media (max-width: 900px){
+  .heroCard{
+    grid-template-columns: 1fr;
+    aspect-ratio: auto;     /* 🔑 stop forcing the ratio */
+    min-height: unset;
+  }
+
+  .heroRight{
+    order: 1;              /* image on top (optional) */
+  }
+
+  .heroRight img{
+    aspect-ratio: 1 / 1;  /* keeps image from becoming too tall */
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .heroActions{
+    flex-wrap: wrap;
+  }
+
+  .heroActions .btn{
+    width: 100%;
+  }
+}
 
 .kicker{
   color: #0b2b2e;
@@ -229,8 +260,9 @@ a{ color: inherit; text-decoration: none; }
 .impactSection{
   padding: 70px 0 90px;
   background: var(--bg2);
-  margin-left: -200px;
-  margin-right: -200px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .impactHeader{
@@ -385,8 +417,167 @@ a{ color: inherit; text-decoration: none; }
 }
 
 /* responsive */
-@media (max-width: 980px){
+@media (max-width: 1100px){
   .impactGrid{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
+
+@media (max-width: 700px){
+  .impactGrid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .impactCard{
+    padding: 18px;
+  }
+
+  .impactMedia{
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+}
+
+@media (max-width: 700px){
+  .brandMark{
+    width: 170px;
+  }
+
+  .navRow{
+    gap: 10px;
+  }
+
+  .navLinks{
+    display: none; /* simple approach; later you can add a hamburger */
+  }
+}
+
+/* Origins (matches screenshot layout) */
+.originsSection{
+  padding: 70px 0 90px;
+  background: var(--bg3);
+  color: var(--inverseInk);
+}
+
+.originsCard{
+  
+  border-radius: 0;
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 1 / 0.46;   /* same vibe as hero */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg3);
+
+  min-height: 520px;
+}
+
+.originsLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 56px);
+  color: var(--inverseInk);
+}
+
+.originsRight{
+  width: 100%;
+  height: 100%;
+}
+
+.originsRight img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* typography */
+.originsKicker{
+  color: var(--inverseInk);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-size: clamp(11px, 1.2vw, 16px);
+}
+
+.originsH1{
+  margin: 0 0 16px;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--inverseInk);
+  font-size: clamp(34px, 3.6vw, 64px);
+}
+
+.originsLead{
+  margin: 0 0 22px;
+  color: rgba(241,245,249,0.92);
+  max-width: 55ch;
+  line-height: 1.7;
+  font-size: clamp(13px, 1.35vw, 20px);
+}
+
+.originsActions{
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px){
+  .originsCard{
+    grid-template-columns: 1fr;
+    aspect-ratio: auto;     /* 🔑 stop forcing the ratio */
+    min-height: unset;
+  }
+
+  .originsRight{
+    order: -1;              /* image on top (optional) */
+  }
+
+  .originsRight img{
+    aspect-ratio: 1 / 1;  /* keeps image from becoming too tall */
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .originsActions{
+    flex-wrap: wrap;
+  }
+
+  .originsActions .btn{
+    width: 100%;
+  }
+}
+
+.originsBtn{
+  border: 2px solid var(--buttonLine);
+  background: var(--bg2);
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.originsBtn:hover{ box-shadow: var(--shadow); }
+
+.originsBtnPrimary{
+  background: var(--bg3);
+  border: 0.2px solid var(--inverseInk);
+  color: var(--inverseInk);
+}
+.originsBtnPrimary:hover{ filter: brightness(0.98); }
+
+.originsBtnGhost{
+  background: var(--bg3);
+  border-color: var(--bg3);
+  color: var(--inverseInk);
+}
+
