@@ -21,7 +21,7 @@ export default function Navbar() {
         </nav>
 
         <div className="navActions">
-          <button className="btn" type="button">Sign up</button>
+          {/*<button className="btn" type="button">Sign up</button>*/}
           <button className="btn btnPrimary" type="button">Donate</button>
         </div>
       </div>
