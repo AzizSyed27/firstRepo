@@ -41,7 +41,7 @@ export default function Home() {
             title: "HAND-PUMP AND ELECTRIC WELLS ACROSS CONTINENTS",
             body:
             "We’ve drilled in Malawi, Tanzania, Uganda, Niger, Pakistan, India, and Nepal. " +
-            "Clean water isn’t a luxury where we work — it’s survival. Every well means a family " +
+            "Clean water isn’t a luxury where we work, it’s survival. Every well means a family " +
             "doesn’t walk miles for water.",
             img: resultsWaterImg,
             alt: "Water well project",
@@ -61,7 +61,7 @@ export default function Home() {
             tag: "Relief",
             title: "RELIEF DELIVERED WHEN IT MATTERS MOST",
             body:
-            "When hardship hits, we move quickly with practical support—food, essentials, and urgent aid " +
+            "When hardship hits, we move quickly with practical support: food, essentials, and urgent aid " +
             "for families facing displacement and crisis.",
             img: resultsReliefImg,
             alt: "Relief aid distribution",
@@ -452,7 +452,7 @@ export default function Home() {
                     <h2 className="recentTitle">RECENT WORK</h2>
                     
                     <p className="recentSub">
-                        Photos tell stories from the field show what we’ve built and who we’ve helped.
+                        Photos and stories from the field show what we’ve built and who we’ve helped.
                     </p>
 
                 </header>
