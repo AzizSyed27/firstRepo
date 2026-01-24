@@ -11,6 +11,12 @@ import resultsWaterImg from '../assets/water-pump-img.jpg';
 import resultsReliefImg from '../assets/aid-img.jpg';
 import impactImg from '../assets/impact-img.jpg';
 
+import arsalanLogo from '../assets/partners/arsalaan-logo.png';
+import dehamLogo from '../assets/partners/deham-logo.png';
+import mtjfLogo from '../assets/partners/mtjf-logo.png';
+import muslimhandsLogo from '../assets/partners/muslinhands-logo.png';
+import mergedPartners from '../assets/partners/merged-partners.jpg';
+
 import recent1 from "../assets/recent/recent-1.png";
 import recent2 from "../assets/recent/recent-2.png";
 import recent3 from "../assets/recent/recent-3.png";
@@ -135,7 +141,46 @@ export default function Home() {
     }
 
 
+    const [openFaq, setOpenFaq] = useState(0); // first one open like screenshot
 
+    const faqs = [
+        {
+            q: "How can I donate?",
+            a:
+            "We are currently accepting donations in the form or e-transfers to info@projectxprojects.ca," +
+            "where you can specify which project you’d like to support. More options coming soon!",
+        },
+        {
+            q: "How do you choose projects?",
+            a:
+            "We listen to communities on the ground. Local partners tell us what’s needed—" +
+            "a well, a masjid, relief aid. We don’t guess. We ask, we verify, we act.",
+        },
+        {
+            q: "Where does my donation go?",
+            a:
+            "Every dollar goes to the project you choose. We share receipts, photos, and updates " +
+            "so you see the work happen. Transparency isn’t optional for us—it’s how we earn trust.",
+        },
+        {
+            q: "Can I sponsor an orphan?",
+            a:
+            "Yes. We match donors with families in Nepal and other regions. You’ll receive updates " +
+            "on the child you support. It’s direct, it’s real, it’s ongoing.",
+        },
+        {
+            q: "How do I get involved locally?",
+            a:
+            "Join us for the annual Scarborough BBQ, the Eid toy drive, or other community events. " +
+            "We organize here, we build here, and we welcome hands and hearts.",
+        },
+        {
+            q: "What about urgent relief?",
+            a:
+            "When urgent needs arise, we move fast. We coordinate with trusted partners and send help " +
+            "where it’s needed most. You can donate to urgent relief anytime.",
+        },
+    ];
 
 
   return (
@@ -334,8 +379,7 @@ export default function Home() {
                 </p>
 
                 <div className="originsActions">
-                    <button className="btn originsBtnPrimary" type="button">Explore</button>
-                    <button className="btn originsBtnGhost" type="button">Learn ›</button>
+                    <button className="btn originsBtnGhost" type="button">Learn More ›</button>
                 </div>
 
                 </div>
@@ -356,11 +400,6 @@ export default function Home() {
                     We don’t talk about change. We build it. Wells that run, masjids that stand,
                     schools that teach, families that eat. This is what we do.
                 </p>
-
-                <div className="resultsTopActions">
-                    <button className="btn resultsBtnPrimary" type="button">Explore</button>
-                    <button className="btn resultsBtnGhost" type="button">Learn ›</button>
-                </div>
 
                 {/* Tabs */}
                 <nav className="resultsTabs" aria-label="Results categories">
@@ -402,8 +441,7 @@ export default function Home() {
                         <p className="resultsCardBody">{current.body}</p>
 
                         <div className="resultsCardActions">
-                        <button className="btn resultsBtnPrimary" type="button">Explore</button>
-                        <button className="btn resultsBtnGhost" type="button">Learn ›</button>
+                        <button className="btn resultsBtnGhost" type="button">Learn More ›</button>
                         </div>
 
                     </div>
@@ -413,6 +451,83 @@ export default function Home() {
             </div>
 
         </section>
+
+        {/* PARTNERS */}
+        <section className="partnersSection" aria-label="Partners">
+
+            <div className="container">
+
+                <div className="partnersCard">
+
+                    <div className="partnersRight">
+
+                        <img src={mergedPartners} alt="Partner Proof" />
+
+                    </div>
+
+                    <div className="partnersLeft">
+
+                        <span className="partnersKicker">PARTNERS</span>
+
+                        <h2 className="partnersH1">WORKING WITH THOSE WHO SHARE THE MISSION</h2>
+
+                        <p className="partnersLead">
+                            Real impact is never done alone. We work alongside trusted partners who 
+                            believe in transparency, accountability, and long-term commitment. These organizations 
+                            and individuals understand that meaningful change takes time, presence, and 
+                            responsibility. Need is need. Suffering is suffering. We simply act on that.
+                        </p>
+
+                        <div className="partnerLogos" aria-label="Partner logos">
+
+                            <a
+                                href="https://muslimhands.ca/home"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Muslim Hands website"
+                            >
+                                <img className="partnerLogo" src={muslimhandsLogo} alt="Muslim Hands" />
+                            </a>
+
+                            <a
+                                href="https://mtjfoundation.ca/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="MTJF website"
+                                >
+                                <img className="partnerLogo" src={mtjfLogo} alt="MTJF" />
+                            </a>
+
+                            <a
+                                href="https://dehamci.com/foundation"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Deham website"
+                                >
+                                <img className="partnerLogo" src={dehamLogo} alt="Deham" />
+                            </a>
+                        
+
+                            <a
+                                href="https://www.facebook.com/ARSALAN.HELPLINE.WELFARE.TRUST/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Arsalan website"
+                                >
+                                <img className="partnerLogo" src={arsalanLogo} alt="Arsalan" />
+                            </a>
+
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
 
         {/* NUMBERS THAT MATTER */}
         <section className="numbersSection" aria-label="Numbers that matter">
@@ -511,8 +626,61 @@ export default function Home() {
         </section>
 
 
+        {/* QUESTIONS / FAQ */}
+        <section className="faqSection" aria-label="Questions">
+            
+            <div className="container">
+                
+                <header className="faqHeader">
+                    
+                    <h2 className="faqTitle">QUESTIONS</h2>
+
+                    <p className="faqSub">
+                        Everything you need to know about how we work and where your donation goes.
+                    </p>
+                
+                </header>
+
+                <div className="faqList" role="list">
+                    {faqs.map((item, idx) => {
+                        const isOpen = openFaq === idx;
+
+                        return (
+                        <div className={`faqItem ${isOpen ? "isOpen" : ""}`} key={item.q} role="listitem">
+                            
+                            <button
+                            className="faqQ"
+                            type="button"
+                            aria-expanded={isOpen}
+                            onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                            >
+                                <span className="faqQText">{item.q}</span>
+                                <span className="faqIcon" aria-hidden="true">{isOpen ? "–" : "+"}</span>
+                            </button>
+                            
+                            <div className="faqAnswerWrap" >
+
+                                <div className="faqA">
+                                    {item.a}
+                                </div>
+                            </div>
+
+                        </div>
+                        );
+                    })}
+                </div>
+
+                <div className="faqMore">
+                    <h3 className="faqMoreTitle">MORE QUESTIONS?</h3>
+                    <p className="faqMoreSub">Reach out. We’re here to answer.</p>
+                    <button className="btn faqContactBtn" type="button">Contact</button>
+                </div>
+            </div>
+        </section>
+
         
 
     </main>
   );
 }
+    

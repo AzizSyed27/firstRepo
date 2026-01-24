@@ -991,3 +991,490 @@ a{ color: inherit; text-decoration: none; }
   }
 }
 
+/* Partners (matches screenshot layout) */
+.partnersSection{
+  padding: 70px 0 90px;
+  background: var(--bg1);
+  color: var(--ink);
+}
+
+.partnersCard{
+  border-radius: 0;
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 1 / 0.46;   
+  max-width: 1700px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg1);
+
+  min-height: 520px;
+}
+
+.partnersLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 56px);
+  color: var(--ink);
+}
+
+.partnersRight{
+  width: 100%;
+  height: 100%;
+}
+
+.partnersRight img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* typography */
+.partnersKicker{
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-size: clamp(11px, 1.2vw, 16px);
+}
+
+.partnersH1{
+  margin: 0 0 16px;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-size: clamp(34px, 3.6vw, 64px);
+}
+
+.partnersLead{
+  margin: 0 0 22px;
+  color: var(--ink);
+  max-width: 55ch;
+  line-height: 1.7;
+  font-size: clamp(13px, 1.35vw, 20px);
+}
+
+.partnersActions{
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.partnersBtn{
+  border: 2px solid var(--buttonLine);
+  background: var(--brand);
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.partnersBtn:hover{ box-shadow: var(--shadow); }
+
+.partnersBtnPrimary{
+  background: var(--brand);
+  border: 0.2px solid var(--inverseInk);
+  color: var(--bg1);
+}
+.partnersBtnPrimary:hover{ filter: brightness(0.98); }
+
+.partnersBtnGhost{
+  background: var(--bg1);
+  border-color: var(--bg1);
+  color: var(--ink);
+}
+
+.partnerLogos{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: nowrap;              /* keep in one row like screenshot */
+  margin: 10px 0 18px;
+}
+
+.partnerLogo{
+  height: 70px;                   /* consistent logo height */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.9;
+   
+}
+
+@media (max-width: 900px){
+  .partnersCard{
+    grid-template-columns: 1fr;
+    aspect-ratio: auto;     /* 🔑 stop forcing the ratio */
+    min-height: unset;
+  }
+
+  .partnersRight{
+    order: 1;              /* image on top (optional) */
+  }
+
+  .partnersRight img{
+    aspect-ratio: 1 / 1;  /* keeps image from becoming too tall */
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .partnersActions{
+    flex-wrap: wrap;
+  }
+
+  .partnersActions .btn{
+    width: 100%;
+  }
+  
+  .partnerLogos{
+    flex-wrap: wrap;      /* allow wrapping on mobile */
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .partnerLogo{
+    height: 40px;
+  }
+}
+
+@media (max-width: 1100px){
+  .partnerLogos{
+    flex-wrap: wrap;      /* allow wrapping on mobile */
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .partnerLogo{
+    height: 40px;
+  }
+}
+
+
+/* FAQ / QUESTIONS */
+.faqSection{
+  background: var(--bg2);
+  padding: 90px 0 95px;
+}
+
+.faqHeader{
+  text-align: center;
+  margin: 0 auto 34px;
+  max-width: 720px;
+}
+
+.faqTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 4vw, 72px);
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.faqSub{
+  margin: 0 auto;
+  color: #123b3e;
+  line-height: 1.7;
+  font-size: 14px;
+  max-width: 60ch;
+}
+
+/* centered column like screenshot */
+.faqList{
+  max-width: 620px;
+  margin: 26px auto 0;
+  display: grid;
+  gap: 14px;
+}
+
+.faqItem{
+  border: 1.5px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255,255,255,0.20);
+}
+
+.faqQ{
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faqQText{
+  font-weight: 800;
+  font-size: 13px;
+  color: #0b2b2e;
+}
+
+.faqIcon{
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  color: #0b2b2e;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.faqA{
+  overflow: hidden;                 /* hides content during animation */
+  padding: 0 16px;
+  color: #123b3e;
+  line-height: 1.7;
+  font-size: 13px;
+  max-width: 70ch;
+}
+
+/* more questions footer */
+.faqMore{
+  text-align: center;
+  margin-top: 70px;
+}
+
+.faqMoreTitle{
+  font-family: var(--font-heading);
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  margin: 0 0 6px;
+}
+
+.faqMoreSub{
+  margin: 0 0 16px;
+  color: #123b3e;
+  font-size: 13px;
+}
+
+.faqContactBtn{
+  background: transparent;
+  border-color: rgba(15, 23, 42, 0.14);
+}
+
+.faqAnswerWrap{
+  display: grid;
+  grid-template-rows: 0fr;          /* closed */
+  transition: grid-template-rows 260ms ease;
+}
+
+.faqItem.isOpen .faqAnswerWrap{
+  grid-template-rows: 1fr;          /* open */
+}
+
+/* add spacing only when open */
+.faqItem.isOpen .faqA{
+  padding-bottom: 16px;
+}
+
+/* FOOTER */
+.siteFooter{
+  background: var(--bg3);
+  color: var(--inverseInk);
+  padding: 70px 0 26px;
+}
+
+.footerTop{
+  display: grid;
+  grid-template-columns: 180px 1fr 420px;
+  gap: 50px;
+  align-items: start;
+}
+
+.footerLogo{
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-size: 22px;
+  color: rgba(241,245,249,0.92);
+}
+
+.footerCols{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 44px;
+}
+
+.footerColTitle{
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(241,245,249,0.90);
+  margin-bottom: 14px;
+}
+
+.footerList{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.footerLink{
+  color: rgba(241,245,249,0.78);
+  font-size: 13px;
+}
+
+.footerLink:hover{
+  color: rgba(241,245,249,0.95);
+}
+
+.footerNewsText{
+  margin: 0 0 14px;
+  color: rgba(241,245,249,0.75);
+  line-height: 1.7;
+  font-size: 13px;
+  max-width: 50ch;
+}
+
+.footerForm{
+  display: flex;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.footerInput{
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(241,245,249,0.18);
+  color: var(--inverseInk);
+  padding: 10px 12px;
+  outline: none;
+}
+
+.footerInput::placeholder{
+  color: rgba(241,245,249,0.55);
+}
+
+.footerSubmit{
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(241,245,249,0.22);
+  color: var(--inverseInk);
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.footerSubmit:hover{
+  background: rgba(255,255,255,0.14);
+}
+
+.footerFine{
+  margin: 0;
+  color: rgba(241,245,249,0.60);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.footerInlineLink{
+  color: rgba(241,245,249,0.80);
+  text-decoration: none;
+}
+
+.footerInlineLink:hover{
+  color: rgba(241,245,249,0.98);
+  text-decoration: underline;
+}
+
+/* bottom bar */
+.footerBottom{
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(241,245,249,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footerLegal{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: rgba(241,245,249,0.62);
+  font-size: 11px;
+}
+
+.footerLegalLinks{
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footerSocials{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footerSocial{
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(241,245,249,0.18);
+  background: rgba(255,255,255,0.08);
+  color: rgba(241,245,249,0.86);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.footerSocial:hover{
+  background: rgba(255,255,255,0.14);
+  color: rgba(241,245,249,0.98);
+}
+
+/* visually hidden label */
+.srOnly{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* responsive */
+@media (max-width: 1100px){
+  .footerTop{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footerCols{
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 28px;
+  }
+
+  .footerForm{
+    flex-direction: column;
+  }
+
+  .footerSubmit{
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px){
+  .footerCols{
+    grid-template-columns: 1fr;
+  }
+
+  .footerBottom{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
