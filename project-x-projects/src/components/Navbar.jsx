@@ -99,7 +99,7 @@ export default function Navbar() {
 
         {/* RIGHT: Actions */}
         <div className="navActions">
-          <button className="btn btnPrimary" type="button">Donate</button>
+          <button className="btn navBtn" type="button">Donate</button>
         </div>
       </div>
 
