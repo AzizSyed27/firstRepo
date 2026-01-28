@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/pxp-logo.png";
+import instaLogo from "../assets/footer/instagram-logo-black-transparent.png"
 
 const COLS = [
   {
@@ -104,7 +105,7 @@ export default function Footer() {
 
         <div className="footerBottom">
           <div className="footerLegal">
-            <span>© {new Date().getFullYear()} Scarborough Community Relief Project. All rights reserved.</span>
+            <span>©2020 Project by the Projects. All rights reserved.</span>
             <div className="footerLegalLinks">
               <Link className="footerInlineLink" to="/privacy">Privacy policy</Link>
               <Link className="footerInlineLink" to="/terms">Terms of service</Link>
@@ -113,21 +114,13 @@ export default function Footer() {
           </div>
 
           <div className="footerSocials" aria-label="Social links">
-            <SocialIcon label="Facebook" href="https://facebook.com">
-              <span aria-hidden="true">f</span>
+            
+            <SocialIcon label="Instagram" href="https://www.instagram.com/projectsxprojects/">
+              <span aria-hidden="true">
+                <img src={instaLogo}></img>
+              </span>
             </SocialIcon>
-            <SocialIcon label="Instagram" href="https://instagram.com">
-              <span aria-hidden="true">Insta</span>
-            </SocialIcon>
-            <SocialIcon label="X" href="https://x.com">
-              <span aria-hidden="true">x</span>
-            </SocialIcon>
-            <SocialIcon label="LinkedIn" href="https://linkedin.com">
-              <span aria-hidden="true">in</span>
-            </SocialIcon>
-            <SocialIcon label="YouTube" href="https://youtube.com">
-              <span aria-hidden="true">▶</span>
-            </SocialIcon>
+            
           </div>
         </div>
       </div>
