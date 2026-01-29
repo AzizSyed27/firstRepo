@@ -16,11 +16,11 @@ const COLS = [
   {
     title: "Resources",
     links: [
-      { label: "Gallery", to: "/gallery" },
-      { label: "Updates", to: "/updates" },
-      { label: "FAQ", to: "/faq" },
-      { label: "Partners", to: "/partners" },
-      { label: "Stories", to: "/stories" },
+      { label: "Gallery", to: "/#gallery" },
+      { label: "Results", to: "/#results" },
+      { label: "Partners", to: "/#partners" },
+      { label: "Numbers", to: "/#numbers" },
+      { label: "FAQ", to: "/#faq" },
     ],
   },
   {

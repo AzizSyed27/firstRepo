@@ -18,7 +18,7 @@ export default function HomeResults(){
                 <>
                     Projects <span className="xproj">X</span> Projects has drilled in Malawi,
                     Tanzania, Uganda, Niger, Pakistan, India, and Nepal. Clean water isn’t a
-                    luxury where we work—it’s survival. Every well means a family doesn’t walk
+                    luxury where we work, it’s survival. Every well means a family doesn’t walk
                     miles for water.
                 </>
             ),
@@ -59,7 +59,7 @@ export default function HomeResults(){
     return(
         <main>
             {/* RESULTS / TANGIBLE WORK */}
-            <section className="resultsSection" aria-label="Results">
+            <section className="resultsSection" aria-label="Results" id="results">
                 <div className="container">
                     <header className="resultsHeader">
                     <div className="resultsEyebrow">Results</div>
@@ -107,10 +107,6 @@ export default function HomeResults(){
                             <div className="resultsTag">{current.tag}</div>
                             <h3 className="resultsCardTitle">{current.title}</h3>
                             <p className="resultsCardBody">{current.body}</p>
-
-                            <div className="resultsCardActions">
-                            <button className="btn resultsBtnGhost" type="button">Learn More ›</button>
-                            </div>
 
                         </div>
 

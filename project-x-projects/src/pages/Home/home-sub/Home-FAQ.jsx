@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomeFAQ(){
 
@@ -48,7 +49,7 @@ export default function HomeFAQ(){
         <main>
 
             {/* QUESTIONS / FAQ */}
-            <section className="faqSection" aria-label="Questions">
+            <section className="faqSection" aria-label="Questions" id="faq">
                 
                 <div className="container">
                     
@@ -94,7 +95,7 @@ export default function HomeFAQ(){
                     <div className="faqMore">
                         <h3 className="faqMoreTitle">MORE QUESTIONS?</h3>
                         <p className="faqMoreSub">Reach out. We’re here to answer.</p>
-                        <button className="btn faqContactBtn" type="button">Contact</button>
+                        <Link className="btn faqContactBtn" to="/contact">Contact</Link>
                     </div>
 
                 </div>

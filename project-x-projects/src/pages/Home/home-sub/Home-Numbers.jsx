@@ -23,7 +23,7 @@ export default function HomeNumbers(){
     return(
         <main>
             {/* NUMBERS THAT MATTER */}
-            <section className="numbersSection" aria-label="Numbers that matter">
+            <section className="numbersSection" aria-label="Numbers that matter" id="numbers">
                 <div className="container">
                     
                     <header className="numbersHeader">

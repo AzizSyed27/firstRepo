@@ -5,11 +5,11 @@ import pxpLogo from "../assets/pxp-logo.png";
 import newLogo from "../assets/pxp-mini-logo.png";
 
 const EXPLORE_ITEMS = [
-  "About Us",
-  "Projects",
-  "Get Involved",
-  "Upcoming Events",
-  "Contact Us"
+  { label: "About Us", to: "/about" },
+  { label: "Projects", to: "/projects" },
+  { label: "Get Involved", to: "/get-involved" },
+  { label: "Upcoming Events", to: "/events" },
+  { label: "Contact Us", to: "/contact" },
 ];
 
 export default function Navbar() {
@@ -118,19 +118,16 @@ export default function Navbar() {
             </div>
 
             <nav className="exploreList" aria-label="Explore">
-              {EXPLORE_ITEMS.map((label) => (
-                <button
-                  key={label}
+              {EXPLORE_ITEMS.map((item) => (
+                <Link
+                  key={item.to}
                   className="exploreItem"
-                  type="button"
-                  onClick={() => {
-                    // TODO: you can navigate / route here later
-                    setExploreOpen(false);
-                  }}
+                  to={item.to}
+                  onClick={() => setExploreOpen(false)}
                 >
-                  <span>{label}</span>
+                  <span>{item.label}</span>
                   <span className="exploreChevron" aria-hidden="true">›</span>
-                </button>
+                </Link>
               ))}
             </nav>
 

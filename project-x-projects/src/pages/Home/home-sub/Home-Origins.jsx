@@ -1,5 +1,6 @@
 /* ORIGINS IMAGES */
 import communityImg from '../../../assets/origins/community-img.jpg';
+import { Link } from "react-router-dom";
 
 export default function HomeOrigins(){
 
@@ -32,7 +33,7 @@ export default function HomeOrigins(){
                     </p>
 
                     <div className="originsActions">
-                        <button className="btn originsBtnGhost" type="button">Learn More ›</button>
+                        <Link className="btn originsBtnGhost" to="/about">Learn More ›</Link>
                     </div>
 
                     </div>

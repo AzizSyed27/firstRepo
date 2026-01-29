@@ -1,0 +1,570 @@
+/* ABOUT PAGE */
+.aboutPage{
+  background: var(--bg1);
+}
+
+/* top header */
+.aboutTop{
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.aboutTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(44px, 4.6vw, 86px);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.aboutSub{
+  margin: 0 auto;
+  max-width: 72ch;
+  color: rgba(15, 23, 42, 0.75);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* Emergence block */
+.aboutEmergence{
+  padding: 40px 0 40px;
+  background: var(--bg2);
+}
+
+.aboutEmergenceInner{
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.aboutArrow{
+  font-family: var(--font-heading);
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.aboutArrowHead{
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+.aboutEyebrow{
+  font-size: clamp(14px, 1.2vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.aboutEmergenceTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.0vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 25px auto 25px;
+  max-width: 30ch;
+  color: var(--ink);
+}
+
+.aboutEmergenceLead{
+  margin: 0 auto 18px;
+  max-width: 72ch;
+  color: rgba(15, 23, 42, 0.78);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+.aboutEmergenceActions{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aboutLearnBtn{
+  background: rgba(255,255,255,0.30);
+  border: 0px;
+  border-radius: 3px;
+}
+
+.aboutInlineBtn{
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(15, 23, 42, 0.70);
+  font-weight: 900;
+  border-radius: 999px;
+}
+
+.aboutInlineBtn:hover{
+  color: var(--brand);
+  background: rgba(17,135,141,0.10);
+}
+
+/* media block */
+.aboutMediaSection{
+  padding: 0px 0 80px;
+  background: var(--bg2);
+}
+
+.aboutMedia{
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.aboutMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .aboutTop{ padding: 70px 0 44px; }
+  .aboutMedia{ min-height: 320px; }
+}
+
+
+
+/* ABOUT: Purpose + Work blocks (matches screenshot) */
+
+.aboutPurpose{
+  background: var(--bg4);
+  padding: 70px 0 70px;
+}
+
+.aboutWork{
+  background: var(--bg2);
+  padding: 80px 0 90px;
+}
+
+/* shared header styling */
+.aboutSectionHeader{
+  text-align: center;
+  margin: 0 auto 34px;
+  max-width: 860px;
+}
+
+.aboutSectionHeaderTight{
+  margin-bottom: 30px;
+}
+
+.aboutSectionEyebrow{
+  font-size: clamp(14px, 1.2vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.aboutSectionTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4.2vw, 78px);
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.aboutSectionSub{
+  margin: 0 auto;
+  max-width: 60ch;
+  color: rgba(15, 23, 42, 0.72);
+  line-height: 1.7;
+  font-size: clamp(13px, 1.2vw, 18px);
+}
+
+/* grids */
+.aboutPurposeGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* first is wider */
+  gap: 22px;
+  align-items: stretch;
+}
+
+.aboutWorkGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* cards */
+.aboutCard{
+  background-color: var(--bg3);
+  border: 0px;
+  border-radius: 5px;
+  padding: 22px;
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.aboutCardWide{
+  padding: 26px;
+}
+
+.aboutCardSoft{
+  background-color: var(--bg1);
+}
+
+/* icon */
+.aboutIcon{
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  color: #0b2b2e;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+
+.aboutIcon img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* text */
+.aboutCardTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.5vw, 25px);
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.aboutCardBody{
+  margin: 0 0 16px;
+  color: rgba(15, 23, 42, 0.72);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 16px);
+  max-width: 48ch;
+}
+
+/* actions */
+.aboutCardActions{
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aboutMiniBtn{
+  background: rgba(255,255,255,0.30);
+  border: 0px;
+  border-radius: 3px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(15, 23, 42, 0.78);
+}
+
+.aboutMiniBtn:hover{
+  box-shadow: var(--shadow);
+}
+
+.aboutInlineArrow{
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(15, 23, 42, 0.70);
+  font-weight: 900;
+  border-radius: 999px;
+}
+
+.aboutInlineArrow:hover{
+  color: var(--brand);
+  background: rgba(17,135,141,0.10);
+}
+
+/* responsive */
+@media (max-width: 1100px){
+  .aboutPurposeGrid{
+    grid-template-columns: 1fr;
+  }
+  .aboutWorkGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ABOUT: LOCATIONS */
+.aboutLocations{
+  background: var(--bg4);
+  padding: 80px 0 90px;
+}
+
+.aboutLocationsGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.aboutLocCard{
+  background: rgba(255,255,255,0.18);
+  border-radius: 5px;
+  overflow: hidden; /* key: lets the image be edge-to-edge */
+}
+
+/* edge-to-edge media */
+.aboutLocMedia{
+  width: 100%;
+  height: 500px;          /* fixed height so both cards match */
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.aboutLocMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* text under image */
+.aboutLocTitle{
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.0vw, 26px);
+  margin: 18px 12px 6px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.aboutLocDesc{
+  text-align: center;
+  margin: 0 14px 10px;
+  color: rgba(15, 23, 42, 0.72);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.aboutLocLink{
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 0 20px;
+  font-weight: 800;
+  font-size: 12px;
+  color: rgba(15, 23, 42, 0.78);
+}
+
+.aboutLocLink:hover{
+  color: var(--brand);
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .aboutLocationsGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .aboutLocMedia{
+    height: 260px;
+  }
+}
+
+/* SECTION HEADER (reused) */
+.aboutSectionHeader{
+  text-align: center;
+  margin: 0 auto 34px;
+  max-width: 900px;
+}
+
+.aboutSectionHeaderTight{ margin-bottom: 26px; }
+
+.aboutSectionEyebrow{
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.70);
+  margin-bottom: 10px;
+}
+
+.aboutSectionTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 4.4vw, 76px);
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.aboutSectionSub{
+  margin: 0 auto;
+  max-width: 70ch;
+  color: rgba(15, 23, 42, 0.75);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* DIFFERENCE */
+.aboutDifference{
+  padding: 80px 0 60px;
+  background: var(--bg1);
+}
+
+.aboutDifferenceGrid{
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr; /* wide + 2 small */
+  gap: 18px;
+  align-items: stretch;
+}
+
+.aboutDiffCard{
+  border: 0px;
+  background-color: var(--bg2);
+  border-radius: 5px;
+  padding: 22px;
+  min-height: 300px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.aboutDiffCardWide{
+  padding: 26px;
+}
+
+.aboutDiffIcon{
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 50px;
+  color: #0b2b2e;
+  font-weight: 900;
+}
+
+.aboutDiffIcon img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.aboutDiffTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.5vw, 25px);
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.aboutDiffBody{
+  margin: 0 0 16px;
+  color: rgba(15, 23, 42, 0.72);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 16px);
+  max-width: 48ch;
+}
+
+.aboutDiffCtaRow{
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.aboutDiffBtn{
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+.aboutDiffArrowBtn{
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(15, 23, 42, 0.75);
+  border-radius: 999px;
+}
+
+.aboutDiffArrowBtn:hover{
+  color: var(--brand);
+  background: rgba(17,135,141,0.10);
+}
+
+.aboutDiffArrowOnly{
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(15, 23, 42, 0.75);
+  padding: 0;
+}
+
+.aboutDiffArrowOnly:hover{ color: var(--brand); }
+
+/* CTA */
+.aboutCta{
+  padding: 60px 0 65px;
+  background: var(--bg3);
+}
+
+.aboutCtaBox{
+  border: 0px;
+  background: var(--bg4);
+  border-radius: 5px;
+  padding: clamp(26px, 4vw, 52px);
+  text-align: center;
+}
+
+.aboutCtaTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.2vw, 44px);
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.aboutCtaSub{
+  margin: 0 auto 18px;
+  max-width: 70ch;
+  color: rgba(15, 23, 42, 0.78);
+  line-height: 1.7;
+  font-size: clamp(13px, 1.2vw, 18px);
+}
+
+.aboutCtaActions{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .aboutDifferenceGrid{
+    grid-template-columns: 1fr;
+  }
+  .aboutDiffCard,
+  .aboutDiffCardWide{
+    padding: 18px;
+  }
+  .aboutCtaActions .btn{
+    width: min(420px, 100%);
+  }
+}

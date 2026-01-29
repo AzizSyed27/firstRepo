@@ -10,7 +10,7 @@ export default function HomePartners(){
     return(
         <main>
             {/* PARTNERS */}
-            <section className="partnersSection" aria-label="Partners">
+            <section className="partnersSection" aria-label="Partners" id="partners">
 
                 <div className="container">
 

@@ -24,7 +24,7 @@
 html, body { width: 100%; overflow-x: hidden; }
 img { max-width: 100%; height: auto; }
 body{
-  margin: 0;
+  margin: 10px auto;
   font-family: var(--font-body);
   background: var(--bg1);
   color: var(--ink);
@@ -342,10 +342,11 @@ body{
 }
 
 .exploreHeroText{
-  font-family: var(--font-body);
-  font-size: clamp(24px, 2.6vw, 42px);
-  color: var(--bg2);
-  margin-bottom: 14px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 86px;
+  color: var(--brand);
+  margin-bottom: 10px;
 }
 
 .exploreCta{
@@ -382,6 +383,12 @@ body{
     margin: 0;
     border-radius: 0;
     padding: 0;
+    margin-top: 10px auto;
+  }
+
+  .navWrap.navWrap.isSolid,
+  .navWrap:hover{
+    margin: auto;
   }
 
   /* Slightly tighter container on mobile */
@@ -1923,3 +1930,135 @@ body{
     align-items: flex-start;
   }
 }
+
+/* CONTACT PAGE */
+.contactSection{
+  background: var(--bg1);
+  padding: 90px 0 95px;
+}
+
+/* top row: left text + right info */
+.contactTop{
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 36px;
+  align-items: start;
+}
+
+/* left copy */
+.contactKicker{
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0b2b2e;
+  margin-bottom: 10px;
+}
+
+.contactTitle{
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 4.4vw, 76px);
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.contactLead{
+  margin: 0;
+  max-width: 60ch;
+  color: #123b3e;
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 20px);
+}
+
+/* right info stack */
+.contactRight{
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+
+.contactInfoItem{
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.contactIcon{
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  color: #0b2b2e;
+  opacity: 0.9;
+}
+
+.contactInfoLabel{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0b2b2e;
+  margin-bottom: 6px;
+}
+
+.contactInfoValue{
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+a.contactInfoValue:hover{
+  color: var(--brand);
+}
+
+/* map */
+.contactMapWrap{
+  margin-top: 40px;
+}
+
+.contactMap{
+  border-radius: 5px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.08);
+  min-height: 360px;
+}
+
+.contactMap iframe{
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+  filter: grayscale(1) contrast(1.05) brightness(1.05);
+}
+
+/* placeholder “map” look (like screenshot) */
+.contactMapPlaceholder{
+  width: 100%;
+  height: 420px;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(15,23,42,0.10), transparent 42%),
+    radial-gradient(circle at 70% 55%, rgba(15,23,42,0.10), transparent 46%),
+    linear-gradient(0deg, rgba(255,255,255,0.35), rgba(255,255,255,0.35));
+}
+
+/* If you use an actual image inside .contactMap */
+.contactMap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* responsive */
+@media (max-width: 1000px){
+  .contactTop{
+    grid-template-columns: 1fr;
+  }
+
+  .contactRight{
+    margin-top: 10px;
+  }
+}
+
+

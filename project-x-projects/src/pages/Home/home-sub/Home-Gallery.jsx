@@ -66,7 +66,7 @@ export default function HomeGallery(){
         <main>
             
             {/* RECENT WORK */}
-            <section className="recentSection" aria-label="Recent work">
+            <section className="recentSection" aria-label="Recent work" id="gallery">
                 <div className="container">
                     <header className="recentHeader">
                         
