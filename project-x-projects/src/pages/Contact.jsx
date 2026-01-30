@@ -1,5 +1,3 @@
-import mapImg from "../assets/contact/map-placeholder.png"; // optional (if you have one)
-
 export default function Contact() {
   return (
     <main>

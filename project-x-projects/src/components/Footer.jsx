@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/pxp-logo.png";
 import instaLogo from "../assets/footer/instagram-logo-black-transparent.png"
 
 const COLS = [
@@ -57,7 +56,7 @@ export default function Footer() {
         <div className="footerTop">
           <div className="footerBrand">
             <div className="footerLogo" aria-label="Project X Projects">
-                P <spam className="xproj">X</spam> P
+                P <span className="xproj">X</span> P
             </div>
           </div>
 
@@ -117,7 +116,7 @@ export default function Footer() {
             
             <SocialIcon label="Instagram" href="https://www.instagram.com/projectsxprojects/">
               <span aria-hidden="true">
-                <img src={instaLogo}></img>
+                <img src={instaLogo} alt="Instagram Logo"></img>
               </span>
             </SocialIcon>
             

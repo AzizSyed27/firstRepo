@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import aboutImg from "../assets/about/about-hero.jpg"; 
@@ -153,7 +152,7 @@ export default function About() {
                             key={c.title}
                             className={`aboutCard ${c.wide ? "aboutCardWide" : ""}`}
                         >
-                            <img src={c.icon} className="aboutIcon"/>
+                            <img src={c.icon} className="aboutIcon" alt="icon"/>
                             <h3 className="aboutCardTitle">{c.title}</h3>
                             <p className="aboutCardBody">{c.body}</p>
 

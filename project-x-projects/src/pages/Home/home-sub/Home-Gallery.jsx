@@ -87,7 +87,7 @@ export default function HomeGallery(){
                         >
                             {recentItems.map((item, i) => (
                             <div className="recentCard" key={item.alt + i}>
-                                <img src={item.img} alt={item.alt} />
+                                <img src={item.img} alt={item.alt} loading="lazy"/>
                             </div>
                             ))}
                         </div>
