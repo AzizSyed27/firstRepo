@@ -1,11 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "../styles/projects.css";
 import water1 from "../assets/recent/recent-1.png";
 import water2 from "../assets/recent/recent-10.jpg";
 import water3 from "../assets/recent/recent-12.jpg";
 
+import waterChangesEverything from "../assets/projects/water-changes-everything.jpg"
+import forTheUmmah from "../assets/projects/for-the-ummah.JPG"
+import wellsOfAccess from "../assets/projects/wells-of-access.jpg"
+import foundationsOfFaith from "../assets/projects/foundation-of-faith.jpg"
+import waterPumpsOfRelief from "../assets/projects/water-pumps-of-relief.jpg"
+import streamsOfMercy from "../assets/projects/steams-of-mercy.jpg"
+import wellsOfPurity from "../assets/projects/wells-of-purity.jpg"
+import pillarsOfFaith from "../assets/projects/pillars-of-faith.jpg"
+
+import celebration from "../assets/projects/celebration.mp4"
+
+import muslimhandsLogo from "../assets/partners/muslinhands-logo.png";
+import mjtfLogo from "../assets/partners/mtjf-logo.png";
+import dehamLogo from "../assets/partners/deham-logo.png";
+import arsalanLogo from "../assets/partners/arsalaan-logo.png";
+
 export default function Projects() {
-  // You can swap images/text anytime — structure matches screenshot
   const cards = [
     {
       kicker: "Clean Water Access",
@@ -43,28 +59,28 @@ export default function Projects() {
       title: "WATER PUMPS OF RELIEF",
       desc: "Four deep hand pumps installed to deliver sustainable, safe water in Pakistan.",
       tags: ["Water", "Pakistan", "Hand Pumps", "Relief", "Clean Water"],
-      img: null, //pakistanPumpsImg
+      img: waterPumpsOfRelief, //pakistanPumpsImg
       to: "#",
     },
     {
       title: "STREAMS OF MERCY",
       desc: "Twenty-two water pumps bringing clean water to villages across Pakistan in need.",
       tags: ["Water", "Pakistan", "Pumps", "Sustainable", "Relief"],
-      img: null, //pakistanStreamsImg
+      img: streamsOfMercy, //pakistanStreamsImg
       to: "#",
     },
     {
       title: "THE WELLS OF PURITY",
       desc: "Four pumps and a wudu facility providing water for daily and religious use in Bihar.",
       tags: ["Water", "India", "Bihar", "Wudu", "Sadaqah"],
-      img: null, //biharImg
+      img: wellsOfPurity, //biharImg
       to: "#",
     },
     {
       title: "PILLARS OF FAITH",
       desc: "A masjid and water well completed to serve worship and clean water in Malawi.",
       tags: ["Faith", "Water", "Malawi", "Masjid", "Ramadan"],
-      img: null, //malawiPillarsImg
+      img: pillarsOfFaith, //malawiPillarsImg
       to: "#",
     },
   ];
@@ -74,37 +90,71 @@ export default function Projects() {
       title: "WATER CHANGES EVERYTHING",
       desc: "A community well bringing safe drinking water to 1,000+ residents in Zanzibar.",
       tags: ["Water", "Zanzibar", "Tanzania", "Community", "Clean Water"],
-      img: null , //zanzibarImg
+      img: waterChangesEverything , //zanzibarImg
       to: "#",
     },
     {
       title: "FOR THE UMMAH",
       desc: "A water well providing clean, reliable water for families and schools in Uganda.",
       tags: ["Water", "Uganda", "Wakiso", "Ummah", "Clean Water"],
-      img: null, //ugandaImg
+      img: forTheUmmah, //ugandaImg
       to: "#",
     },
     {
       title: "WELLS OF ACCESS",
       desc: "A well restoring clean water access for 8 families in rural Niger communities.",
       tags: ["Water", "Niger", "Dosso", "Access", "Clean Water"],
-      img: null, //nigerImg
+      img: wellsOfAccess, //nigerImg
       to: "#",
     },
     {
       title: "FOUNDATIONS OF FAITH",
       desc: "A masjid and water well built to support worship and daily clean water in Malawi.",
       tags: ["Faith", "Water", "Malawi", "Masjid", "Community"],
-      img: null, //malawiFoundationsImg
+      img: foundationsOfFaith, //malawiFoundationsImg
       to: "#",
     },
+  ];
+
+    const projectImpactStats = [
+    { value: "50+", label: "WELLS INSTALLED ACROSS REGIONS" },
+    { value: "15+", label: "MASJIDS AND SCHOOLS BUILT" },
+    { value: "1000+", label: "FAMILIES SUPPORTED AND SPONSORED" },
+  ];
+
+  const partnerTiles = [
+    {
+      name: "Muslim Hands",
+      href: "https://muslimhands.ca/home",
+      logo: muslimhandsLogo,
+      aria: "Muslim Hands website",
+    },
+    {
+      name: "MJTF",
+      href: "https://mjtf.org", // change if needed
+      logo: mjtfLogo,
+      aria: "MJTF website",
+    },
+    {
+      name: "Deham",
+      href: "https://deham.org", // change if needed
+      logo: dehamLogo,
+      aria: "Deham website",
+    },
+    {
+      name: "Arsalan Helpline",
+      href: "https://arsalanhelpline.org", // change if needed
+      logo: arsalanLogo,
+      aria: "Arsalan Helpline website",
+    },
+    // more to add later
   ];
 
   function getColsForViewport() {
     if (typeof window === "undefined") return 3;
     const w = window.innerWidth;
 
-    // match your CSS breakpoints:
+    // CSS breakpoints:
     // < 620px => 1 col
     // < 980px => 2 cols
     // otherwise => 3 cols
@@ -130,6 +180,26 @@ export default function Projects() {
   const visibleCompleted = showAllCompleted ? completedProjects : completedProjects.slice(0, cols);
   const canToggleCompleted = completedProjects.length > cols;
 
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = async () => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    if (v.paused) {
+      try {
+        await v.play();
+        setIsPlaying(true);
+      } catch (e) {
+        // Autoplay can be blocked unless muted or user-initiated (this is user-initiated, so usually ok)
+        console.error(e);
+      }
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <main className="projectsPage">
@@ -200,24 +270,9 @@ export default function Projects() {
             {visibleCurrentNow.map((p) => (
               <article className="currentNowCard" key={p.title}>
                 <div className="currentNowMedia">
-                  {p.img ? (
+                 
                     <img src={p.img} alt="" />
-                  ) : (
-                    <div className="currentNowPlaceholder" aria-hidden="true">
-                      {/* icon */}
-                      <svg viewBox="0 0 24 24" width="52" height="52">
-                        <path
-                          d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v13A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5v-13Z"
-                          fill="rgba(15,23,42,0.12)"
-                        />
-                        <path
-                          d="M7 16l3.2-3.6a1 1 0 0 1 1.5 0L14 15l1.4-1.6a1 1 0 0 1 1.5 0L18 15v3H7v-2Z"
-                          fill="rgba(15,23,42,0.20)"
-                        />
-                        <circle cx="9" cy="8.5" r="1.3" fill="rgba(15,23,42,0.20)" />
-                      </svg>
-                    </div>
-                  )}
+                 
                 </div>
 
                 <div className="currentNowBody">
@@ -286,23 +341,9 @@ export default function Projects() {
             {visibleCompleted.map((p) => (
               <article className="completedCard" key={p.title}>
                 <div className="completedMedia">
-                  {p.img ? (
+                 
                     <img src={p.img} alt="" loading="lazy" />
-                  ) : (
-                    <div className="completedPlaceholder" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="52" height="52">
-                        <path
-                          d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v13A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5v-13Z"
-                          fill="rgba(15,23,42,0.12)"
-                        />
-                        <path
-                          d="M7 16l3.2-3.6a1 1 0 0 1 1.5 0L14 15l1.4-1.6a1 1 0 0 1 1.5 0L18 15v3H7v-2Z"
-                          fill="rgba(15,23,42,0.20)"
-                        />
-                        <circle cx="9" cy="8.5" r="1.3" fill="rgba(15,23,42,0.20)" />
-                      </svg>
-                    </div>
-                  )}
+                 
                 </div>
 
                 <div className="completedBody">
@@ -351,6 +392,140 @@ export default function Projects() {
          
         </div>
       </section>
+
+      {/* IMPACT */}
+      <section className="projectImpactSection" aria-label="Impact">
+        <div className="container">
+          <header className="projectImpactHead">
+            <div className="projectsEyebrow">Impact</div>
+            <h2 className="projectImpactTitle">WHAT WE&apos;VE BUILT TOGETHER</h2>
+            <p className="projectImpactSub">Real work. Real numbers. Real lives changed.</p>
+          </header>
+
+          <div className="projectImpactRow">
+            <dl className="projectImpactStats">
+              {projectImpactStats.map((s) => (
+                <div className="projectImpactStat" key={s.label}>
+                  <dt className="projectImpactValue">{s.value}</dt>
+                  <dd className="projectImpactLabel">{s.label}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="projectImpactMedia" role="group" aria-label="Impact video">
+              <video
+                ref={videoRef}
+                className="projectImpactVideo"
+                playsInline
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
+              >
+                <source src={celebration} type="video/mp4" />
+              </video>
+
+              {/* Big play overlay when NOT playing */}
+              {!isPlaying && (
+                <div className="projectImpactOverlay">
+                  <button
+                    className="projectImpactPlay"
+                    type="button"
+                    onClick={togglePlay}
+                    aria-label="Play impact video"
+                  >
+                    <span className="projectImpactPlayIcon" aria-hidden="true">▶</span>
+                  </button>
+                </div>
+              )}
+
+              {/* Small pause button when playing */}
+              {isPlaying && (
+                <button
+                  className="projectImpactPause"
+                  type="button"
+                  onClick={togglePlay}
+                  aria-label="Pause impact video"
+                >
+                  <span className="projectImpactPauseIcon" aria-hidden="true">❚❚</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUSTED PARTNERS */}
+      <section className="trustedPartnersSection" aria-label="Trusted partners">
+        <div className="container">
+          <div className="trustedPartnersRow">
+            <div className="trustedPartnersLeft">
+              <h2 className="trustedPartnersTitle">
+                WE WORK WITH TRUSTED PARTNERS ON <br /> THE GROUND
+              </h2>
+
+              <p className="trustedPartnersSub">
+                Local contacts in each region ensure our projects meet real community needs.
+              </p>
+
+              <div className="trustedPartnersActions">
+                
+                <a className="trustedLink" href="#connect">
+                  Connect <span aria-hidden="true">›</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="trustedPartnersRight" aria-label="Partner logos">
+              <div className="trustedGrid">
+                {partnerTiles.map((p, idx) => (
+                  <div className="trustedCell" key={`${p.name}-${idx}`}>
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={p.aria}
+                      className="partnerLink"
+                    >
+                      <img className="partnerLogo" src={p.logo} alt={p.name} loading="lazy" />
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="projectCta" aria-label="Join us">
+
+        <div className="container">
+
+            <div className="projectCtaBox">
+
+                <h2 className="projectCtaTitle">READY TO HELP?</h2>
+
+                <p className="projectCtaSub">
+                    Join us in making real change. Pick a project, give what you can, or volunteer your time.
+                </p>
+
+                <div className="projectCtaActions">
+
+                    <button className="btn btnPrimary" type="button">Get involved</button>
+
+                    <Link to="/contact" className="btn btnGhost">
+                    Contact
+                    </Link>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
     </main>
   );
 }

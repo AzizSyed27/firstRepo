@@ -1,14 +1,12 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import pxpLogo from "../assets/pxp-logo.png";
-// TODO: replace this with your “new” logo asset
 import newLogo from "../assets/pxp-mini-logo.png";
 
 const EXPLORE_ITEMS = [
   { label: "About Us", to: "/about" },
   { label: "Projects", to: "/projects" },
   { label: "Get Involved", to: "/get-involved" },
-  { label: "Upcoming Events", to: "/events" },
   { label: "Contact Us", to: "/contact" },
 ];
 
@@ -72,7 +70,7 @@ export default function Navbar() {
             aria-controls={panelId}
             onClick={() => setExploreOpen((v) => !v)}
           >
-            Explore <span className="navCaret" aria-hidden="true">▾</span>
+            Explore {/*<span className="navCaret" aria-hidden="true">▾</span>*/}
           </button>
         </div>
 

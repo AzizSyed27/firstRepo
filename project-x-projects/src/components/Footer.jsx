@@ -80,7 +80,7 @@ export default function Footer() {
           <div className="footerNews">
             <div className="footerColTitle">Updates</div>
             <p className="footerNewsText">
-              Stay informed with our latest news and project updates from Scarborough Community Relief Project.
+              Stay informed with our latest news and project updates from Projects by the Projects.
             </p>
 
             <form className="footerForm" onSubmit={onSubmit}>
@@ -94,22 +94,25 @@ export default function Footer() {
               />
               <button className="footerSubmit" type="submit">Subscribe</button>
             </form>
-
+            {/*}
             <p className="footerFine">
               By subscribing you agree to our <Link className="footerInlineLink" to="/privacy">Privacy Policy</Link> and
               consent to receive updates from Scarborough Community Relief Project.
             </p>
+            */}
           </div>
         </div>
 
         <div className="footerBottom">
           <div className="footerLegal">
             <span>©2020 Project by the Projects. All rights reserved.</span>
+            {/*}
             <div className="footerLegalLinks">
               <Link className="footerInlineLink" to="/privacy">Privacy policy</Link>
               <Link className="footerInlineLink" to="/terms">Terms of service</Link>
               <Link className="footerInlineLink" to="/cookies">Cookie settings</Link>
             </div>
+            */}
           </div>
 
           <div className="footerSocials" aria-label="Social links">
