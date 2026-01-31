@@ -9,7 +9,7 @@ const COLS = [
       { label: "Get involved", to: "/get-involved" },
       { label: "About us", to: "/about" },
       { label: "Contact", to: "/contact" },
-      { label: "Community", to: "/community" },
+      
     ],
   },
   {
@@ -18,7 +18,6 @@ const COLS = [
       { label: "Gallery", to: "/#gallery" },
       { label: "Results", to: "/#results" },
       { label: "Partners", to: "/#partners" },
-      { label: "Numbers", to: "/#numbers" },
       { label: "FAQ", to: "/#faq" },
     ],
   },
@@ -28,7 +27,6 @@ const COLS = [
       { label: "Donate now", to: "/donate" },
       { label: "Newsletter", to: "/newsletter" },
       { label: "Social media", to: "/social" },
-      { label: "Events", to: "/events" },
       { label: "Support", to: "/support" },
     ],
   },
