@@ -1126,7 +1126,7 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 460px;
-  aspect-ratio: auto;
+  aspect-ratio: 1 / 0.5;
 }
 
 .resultsMedia{
